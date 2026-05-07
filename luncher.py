@@ -48,7 +48,6 @@ class TronLauncher:
         self.load_maps()
 
     def generate_map(self):
-        """دالة كتولد خريطة عشوائية متماثلة وكتسيفطها لدوسي maps"""
         if not os.path.exists("maps"):
             os.makedirs("maps")
             
@@ -56,7 +55,9 @@ class TronLauncher:
         H = random.randint(15, 25)
         
         grid = [['.' for _ in range(W)] for _ in range(H)]
-        
+
+        num_walls_half = int((W * H) * 0.1 / 2)
+
         for _ in range(num_walls_half):
             rx = random.randint(0, W - 1)
             ry = random.randint(0, H // 2 - 1)

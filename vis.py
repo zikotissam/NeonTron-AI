@@ -9,7 +9,7 @@ def choose_file():
     root = tk.Tk()
     root.withdraw()
     file_path = filedialog.askopenfilename(
-        title="ختار الماتش د الفريق (Replay File)",
+        title="(Replay File)",
         filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
     )
     return file_path
@@ -92,7 +92,6 @@ class Particle:
             surface.blit(surf, (int(self.x), int(self.y)))
 
 def create_glow_surface(width, height, color, radius, solid_core=True):
-    """كتولد مربع فيه إضاءة نيون (Glow Texture)"""
     surf = pygame.Surface((width + radius*2, height + radius*2), pygame.SRCALPHA)
     for r in range(radius, 0, -2):
         alpha = int(255 * (1 - r/radius)**2 * 0.3)
@@ -104,7 +103,6 @@ def create_glow_surface(width, height, color, radius, solid_core=True):
     return surf
 
 def draw_neon_line(surface, color, start, end, width):
-    """رسم خط بإضاءة النيون 3 طبقات"""
     pygame.draw.line(surface, (*color, 100), start, end, width + 8)
     pygame.draw.line(surface, color, start, end, width)
     pygame.draw.line(surface, (255, 255, 255), start, end, max(2, width // 3))
@@ -117,6 +115,8 @@ def main():
     if len(sys.argv) > 1:
         filepath = sys.argv[1]
     else:
+        filepath = choose_file() 
+        
     if not filepath: sys.exit()
 
     W, H, NUM_AGENTS, starts, is_mine, walls, moves, winner = load_replay(filepath)
@@ -166,7 +166,7 @@ def main():
     is_playing = False
     speed_delay = 300 
     last_update_time = pygame.time.get_ticks()
-    
+    bg_offset_y = 0
     particles = []
     exploded_agents = set()
 
