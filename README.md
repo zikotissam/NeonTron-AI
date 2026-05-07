@@ -47,6 +47,7 @@ Clone the repository and install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
+sudo apt install python3-tk
 ```
 
 ---
