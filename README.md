@@ -119,12 +119,6 @@ Cyberpunk Pygame Visualizer
 
 ---
 
-# 📜 License
-
-MIT License
-
----
-
 # 👨‍💻 Author
 
 Built with ⚡ using C++, Python, and Pygame.
