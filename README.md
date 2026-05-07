@@ -6,7 +6,7 @@
 
 A high-performance, AI-driven Tron engine featuring multi-agent PvP matches. The core engine is built in **C++** using an optimized **Decoupled UCT (MCTS)** algorithm, while the visuals are rendered in a sleek, Cyberpunk-themed **Python/Pygame** interface.
 
-![Tron AI Preview](preview.png) *(Add a screenshot of your game here and name it preview.png)*
+![Tron AI Preview](preview.png)
 
 ## ✨ Key Features
 - **🧠 Advanced AI Engine:** Powered by a customized Monte Carlo Tree Search (Decoupled UCT) allowing agents to plan deep into the future without state-space explosion.
