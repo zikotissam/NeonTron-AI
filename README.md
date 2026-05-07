@@ -9,11 +9,14 @@ A high-performance, AI-driven Tron engine featuring multi-agent PvP matches. The
 ![Tron AI Preview](preview.png)
 
 ## ✨ Key Features
+
 - **🧠 Advanced AI Engine:** Powered by a customized Monte Carlo Tree Search (Decoupled UCT) allowing agents to plan deep into the future without state-space explosion.
 - **🗺️ Selfish Agent Evaluation:** Uses a Multi-Source Breadth-First Search (BFS) to calculate Voronoi territory control. Each agent acts selfishly to maximize its own survival space.
 - **⚔️ PvP Team Matches:** Symmetrical map generation ensuring 100% fair matches between Team Blue and Team Red.
 - **🎨 Cyberpunk Visualizer:** Smooth `lerp` animations, neon glow rendering, and dynamic particle explosions using Pygame.
 - **🎛️ Match Launcher:** A built-in Tkinter GUI to generate random symmetric maps, select agent counts, and launch the C++ engine pipeline seamlessly.
+
+---
 
 ## 📁 Project Structure
 
@@ -26,36 +29,102 @@ Tron-Cyber-AI/
 ├── tron / tron.exe        # Pre-compiled C++ Engine (Linux)
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
-🚀 How to Run
-Prerequisites
+```
+
+---
+
+# 🚀 How to Run
+
+## 📦 Prerequisites
+
 Make sure you have Python 3 installed on your machine.
 
-1. Install Dependencies
-Clone the repository and install the required Python library:
+---
 
-Bash
+## 1️⃣ Install Dependencies
 
+Clone the repository and install the required Python libraries:
+
+```bash
 pip install -r requirements.txt
-2. Launch the Game
+```
+
+---
+
+## 2️⃣ Launch the Game
+
 Run the graphical launcher to start a match:
 
-Bash
-
+```bash
 python launcher.py
-3. Controls (During Replay)
+```
+
+---
+
+## 3️⃣ Controls (During Replay)
+
 Once the Pygame visualizer opens, use the following keys:
 
-[SPACE]: Play / Pause the animation.
+| Key | Action |
+|------|--------|
+| `SPACE` | Play / Pause animation |
+| `RIGHT / LEFT ARROWS` | Move forward or backward turn-by-turn |
+| `UP / DOWN ARROWS` | Increase or decrease animation speed |
 
-[RIGHT / LEFT ARROWS]: Move forward or backward turn by turn.
+---
 
-[UP / DOWN ARROWS]: Increase or decrease animation speed.
+# 🧠 Behind the Scenes: The AI Logic
 
-🧠 Behind the Scenes: The AI Logic
-Unlike standard MCTS which struggles with simultaneous multi-agent games due to branching factor explosion, this engine uses Independent Decoupled Trees.
+Unlike standard MCTS which struggles with simultaneous multi-agent games due to branching factor explosion, this engine uses **Independent Decoupled Trees**.
 
+### 🔹 Independent Search Trees
 Each agent maintains its own search tree.
 
+### 🔹 Joint Action Resolution
 During the Simulation phase, the joint actions are collected and evaluated against the game rules.
 
-The Evaluation phase uses a Voronoi Space Control heuristic, rewarding agents who cut off enemies and secure the largest surviving area.
+### 🔹 Voronoi Space Control Heuristic
+The Evaluation phase uses a Voronoi Space Control heuristic, rewarding agents who:
+
+- Cut off enemies
+- Secure the largest surviving area
+- Maximize future mobility
+- Avoid self-trapping
+
+---
+
+# ⚡ Engine Pipeline
+
+```text
+Launcher (Tkinter)
+        ↓
+Symmetric Map Generator
+        ↓
+C++ Decoupled UCT Engine
+        ↓
+Replay File Output
+        ↓
+Cyberpunk Pygame Visualizer
+```
+
+---
+
+# 🎨 Visual Features
+
+- Neon cyberpunk color palette
+- Smooth interpolation animations (`lerp`)
+- Dynamic explosion particles
+- Glowing bike trails
+- Real-time replay visualization
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# 👨‍💻 Author
+
+Built with ⚡ using C++, Python, and Pygame.
