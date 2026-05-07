@@ -26,7 +26,6 @@ Tron-Cyber-AI/
 ├── tron / tron.exe        # Pre-compiled C++ Engine (Linux)
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
-
 🚀 How to Run
 Prerequisites
 Make sure you have Python 3 installed on your machine.
@@ -60,4 +59,3 @@ Each agent maintains its own search tree.
 During the Simulation phase, the joint actions are collected and evaluated against the game rules.
 
 The Evaluation phase uses a Voronoi Space Control heuristic, rewarding agents who cut off enemies and secure the largest surviving area.
-```
