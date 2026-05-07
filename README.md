@@ -26,3 +26,38 @@ Tron-Cyber-AI/
 ├── tron / tron.exe        # Pre-compiled C++ Engine (Linux)
 ├── requirements.txt       # Python dependencies
 └── README.md              # Project documentation
+
+🚀 How to Run
+Prerequisites
+Make sure you have Python 3 installed on your machine.
+
+1. Install Dependencies
+Clone the repository and install the required Python library:
+
+Bash
+
+pip install -r requirements.txt
+2. Launch the Game
+Run the graphical launcher to start a match:
+
+Bash
+
+python launcher.py
+3. Controls (During Replay)
+Once the Pygame visualizer opens, use the following keys:
+
+[SPACE]: Play / Pause the animation.
+
+[RIGHT / LEFT ARROWS]: Move forward or backward turn by turn.
+
+[UP / DOWN ARROWS]: Increase or decrease animation speed.
+
+🧠 Behind the Scenes: The AI Logic
+Unlike standard MCTS which struggles with simultaneous multi-agent games due to branching factor explosion, this engine uses Independent Decoupled Trees.
+
+Each agent maintains its own search tree.
+
+During the Simulation phase, the joint actions are collected and evaluated against the game rules.
+
+The Evaluation phase uses a Voronoi Space Control heuristic, rewarding agents who cut off enemies and secure the largest surviving area.
+```
