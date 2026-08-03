@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+dist/
+build/
+
+# Engine / build artifacts
+*.exe
+bin/
+obj/
+
+# Generated data
+replays/
+maps/*.txt
+trainer_artifacts/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
